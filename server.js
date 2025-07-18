@@ -25,7 +25,7 @@ let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
   // Обработка входящих сообщений
     ws.on('message', (mes) => {
 // Парсим сообщение
-        let d2 =JSON.parse(mes);
+        let d2 =JSON.parse(mes.data);
         let e=d2.e;
         let m=d2.m;
 
