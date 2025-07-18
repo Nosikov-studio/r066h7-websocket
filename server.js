@@ -22,17 +22,17 @@ wss.on('connection', (ws) => {
   
   //********************************************************
   // Обработка входящих сообщений
-    ws.on('message', (message) => {
+    ws.on('message', (mes) => {
 // Парсим сообщение
-        let d2 =JSON.parse(message);
+        let d2 =JSON.parse(mes);
         let e=d2.e;
         let m=d2.m;
-let mes =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
+let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
 
 // Отправляем сообщение всем клиентам
         wss.clients.forEach(client => {
             if (client.readyState === WebSocket.OPEN){ // 
-                client.send(mes);
+                client.send(message);
             }
         });  
     })  
