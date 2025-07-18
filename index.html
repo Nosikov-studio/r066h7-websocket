@@ -30,7 +30,8 @@
     <div id="messages"></div>
 <script>
 let ws = new WebSocket('wss://truruky.ru/ws');
-  ws.onmessage = (e) => {
+// получаем сообщение от сервера
+ws.onmessage = (e) => {
     const d = JSON.parse(e.data); // Здесь d — это объект {t1: ..., d1: ..., k1: ...}
     
     document.getElementById('id1').innerHTML =`${d.d1.a}`; // d1 - объект в объекте d
@@ -41,7 +42,11 @@ let ws = new WebSocket('wss://truruky.ru/ws');
     md.appendChild(me);
   }
   //*******************************************************************************
-  
+  // отправляем сообщение формы по нажатию кнопки
+    document.getElementById('sendButton').addEventListener('click', ()=> {
+    const messageInput =document.getElementById('messageInput').value;
+    ws.send(JSON.stringify({ event: 'greeting', message: messageInput}));
+    });
 
 </script>
 
