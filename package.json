@@ -1,0 +1,23 @@
+{
+  "name": "r066h7-websocket",
+  "version": "1.0.0",
+  "description": "Учебный проект h7 на тему websocket основан на упрощении предыдущего проекта (r064o4-webrtc) для лучшего понимания работы последнего.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nosikov-studio/r066h7-websocket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nosikov-studio/r066h7-websocket/issues"
+  },
+  "homepage": "https://github.com/Nosikov-studio/r066h7-websocket#readme",
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}

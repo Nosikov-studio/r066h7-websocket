@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WebRTC Two Clients</title>
+<style>
+  video { width: 300px; height: 200px; margin: 5px; background-color: black; }
+</style>
+</head>
+<body>
+  <div>
+    <label>Ваш ID: <input id="yourId" value="client1" /></label><br />
+    <label>ID партнера: <input id="partnerId" value="client2" /></label><br />
+    <button id="startBtn">Начать звонок</button>
+  </div>
+
+  <video id="localVideo" autoplay muted playsinline></video>
+  <video id="remoteVideo" autoplay playsinline></video>
+
+  <script type="module" src="client.js"></script>
+</body>
+</html>
