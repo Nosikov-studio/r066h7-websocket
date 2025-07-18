@@ -36,6 +36,17 @@ let ws = new WebSocket('wss://truruky.ru/ws');
     document.getElementById('id1').innerHTML =`${d.d1.a}`; // d1 - объект в объекте d
     document.getElementById('id2').innerHTML =`${d.k1}`;
   }
+  //*******************************************************************************
+  ws.onmessage = (event) => {
+                try {
+                    console.log("Event ->", event)
+                    const data = JSON.parse(event.data);
+                    const md=document.getElementById('messages');
+                    const me=document.createElement('div');
+                    me.textContent =`${data.event}: ${data.message}`;
+                    md.appendChild(me);
+                } catch (error) { console.log("Error" + error)}
+            };
 
 </script>
 
