@@ -19,7 +19,7 @@ wss.on('connection', (ws) => {
   const d={a:'blabla', b:'kuku', c:1974, d:true}
   let m="Hello!!!!!!!!!!!!!"
   let e="Connected"
-  let name=''
+  let name='Server'
 let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e, name:name});
   
   //********************************************************
