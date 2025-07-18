@@ -22,6 +22,12 @@
   <script type="module" src="client.js"></script> -->
   <div id="id1"></div>
   <div id="id2"></div>
+      <h1> WebSocket Client</h1>
+    <div> 
+        <input type="text" id="messageInput" placeholder="Type a message">
+        <button id="sendButton"> Send</button>
+    </div>
+    <div id="messages"></div>
 <script>
 let ws = new WebSocket('wss://truruky.ru/ws');
   ws.onmessage = (e) => {
