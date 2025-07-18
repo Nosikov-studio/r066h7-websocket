@@ -15,7 +15,7 @@ wss.on('connection', (ws) => {
     clients =clients.filter((client)=> client !==ws);
     console.log('Client disconnected');
   });
-
+let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
   const d={a:'blabla', b:'kuku', c:1974, d:true}
   let m="Hello!!!!!!!!!!!!!"
 
@@ -27,7 +27,7 @@ wss.on('connection', (ws) => {
         let d2 =JSON.parse(mes);
         let e=d2.e;
         let m=d2.m;
-let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
+
 
 // Отправляем сообщение всем клиентам
         wss.clients.forEach(client => {
