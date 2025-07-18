@@ -16,7 +16,8 @@ wss.on('connection', (ws) => {
     console.log('Client disconnected');
   });
 
-  const message =JSON.stringify({ a:'blabla', b:'kuku', c:1974, d:true});
+  const d={a:'blabla', b:'kuku', c:1974, d:true}
+  const message =JSON.stringify({type:'myt', data:d});
 
   clients.forEach((client) => {
     if(client.readyState === WebSocket.OPEN){

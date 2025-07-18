@@ -23,10 +23,10 @@
   <div id="id1"></div>
 <script>
 let ws = new WebSocket('wss://truruky.ru/ws');
-  ws.onmessage = (message) => {
-    const m = JSON.parse(message);
+  ws.onmessage = (e) => {
+    const d = JSON.parse(e.data);
     log('Signaling message received:', d);
-    document.getElementById('id1').innerHTML =`${m}`;
+    document.getElementById('id1').innerHTML =`${d}`;
   }
 
 </script>
