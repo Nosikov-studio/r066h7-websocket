@@ -15,10 +15,11 @@ wss.on('connection', (ws) => {
     clients =clients.filter((client)=> client !==ws);
     console.log('Client disconnected');
   });
-let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
+
   const d={a:'blabla', b:'kuku', c:1974, d:true}
   let m="Hello!!!!!!!!!!!!!"
-
+  let e
+let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
   
   //********************************************************
   // Обработка входящих сообщений
