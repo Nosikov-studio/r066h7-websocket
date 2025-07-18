@@ -31,6 +31,12 @@
 <script>
   let name = prompt("Введите имя!");
 let ws = new WebSocket('wss://truruky.ru/ws');
+ws.onopen = () => {
+  console.log('Connected to the WebSocket server');
+  ws.send(JSON.stringify({event: 'greeting', message: 'Hello Server!'}));
+};
+
+
 // получаем сообщение от сервера
 ws.onmessage = (e) => {
     const d = JSON.parse(e.data); // Здесь d — это объект {t1: ..., d1: ..., k1: ..., m:..., e:..., name: ...}
@@ -42,6 +48,14 @@ ws.onmessage = (e) => {
     me.textContent =`${d.name}: ${d.m}`;
     md.appendChild(me);
   }
+// событие закрытия
+ws.onclose = () => {
+  console.log('Disconnected from the Websocket server');
+            };
+// событие ошибки
+ws.onerror =(error) => {
+  console.error('Websocket error:', error);
+            };
   //*******************************************************************************
   // отправляем сообщение формы по нажатию кнопки
     document.getElementById('sendButton').addEventListener('click', ()=> {
