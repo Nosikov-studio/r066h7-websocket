@@ -17,7 +17,7 @@ wss.on('connection', (ws) => {
   });
 
   const d={a:'blabla', b:'kuku', c:1974, d:true}
-  const message =JSON.stringify({type:'myt', data:d});
+  const message =JSON.stringify({t1:'myt', d1:d, k1:2028});
 
   clients.forEach((client) => {
     if(client.readyState === WebSocket.OPEN){
