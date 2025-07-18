@@ -26,7 +26,7 @@ let ws = new WebSocket('wss://truruky.ru/ws');
   ws.onmessage = (e) => {
     const d = JSON.parse(e.data);
     
-    document.getElementById('id1').innerHTML =`${d}`;
+    document.getElementById('id1').innerHTML =`${d.a}`;
   }
 
 </script>
