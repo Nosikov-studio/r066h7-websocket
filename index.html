@@ -29,7 +29,7 @@
     </div>
     <div id="messages"></div>
 <script>
-  let name = alert("Введите имя!");
+  let name = prompt("Введите имя!");
 let ws = new WebSocket('wss://truruky.ru/ws');
 // получаем сообщение от сервера
 ws.onmessage = (e) => {
