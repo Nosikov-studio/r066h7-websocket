@@ -29,23 +29,24 @@
     </div>
     <div id="messages"></div>
 <script>
+  let name = alert("Введите имя!");
 let ws = new WebSocket('wss://truruky.ru/ws');
 // получаем сообщение от сервера
 ws.onmessage = (e) => {
-    const d = JSON.parse(e.data); // Здесь d — это объект {t1: ..., d1: ..., k1: ...}
+    const d = JSON.parse(e.data); // Здесь d — это объект {t1: ..., d1: ..., k1: ..., m:..., e:..., name: ...}
     
     document.getElementById('id1').innerHTML =`${d.d1.a}`; // d1 - объект в объекте d
     document.getElementById('id2').innerHTML =`${d.k1}`;
     const md=document.getElementById('messages');
     const me=document.createElement('div');
-    me.textContent =`${d.e}: ${d.m}`;
+    me.textContent =`${d.name}: ${d.m}`;
     md.appendChild(me);
   }
   //*******************************************************************************
   // отправляем сообщение формы по нажатию кнопки
     document.getElementById('sendButton').addEventListener('click', ()=> {
     const messageInput =document.getElementById('messageInput').value;
-    ws.send(JSON.stringify({ e: 'greeting', m: messageInput}));
+    ws.send(JSON.stringify({ e: 'greeting', m: messageInput, name: name}));
     });
 
 </script>
