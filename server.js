@@ -16,25 +16,28 @@ wss.on('connection', (ws) => {
     console.log('Client disconnected');
   });
 
+  const d={a:'blabla', b:'kuku', c:1974, d:true}
+  let m="Hello!!!!!!!!!!!!!"
 
+  
   //********************************************************
   // Обработка входящих сообщений
     ws.on('message', (message) => {
 // Парсим сообщение
         let d2 =JSON.parse(message);
+        let e=d2.e;
+        let m=d2.m;
+let mes =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:e});
 
 // Отправляем сообщение всем клиентам
         wss.clients.forEach(client => {
             if (client.readyState === WebSocket.OPEN){ // 
-                client.send(JSON.stringify(d2));
+                client.send(mes);
             }
         });  
     })  
   //**********************************************************/
-  const d={a:'blabla', b:'kuku', c:1974, d:true}
-  let m="Hello!!!!!!!!!!!!!"
 
-  let message =JSON.stringify({t1:'myt', d1:d, k1:2028, m:m, e:"Connected"});
 
   clients.forEach((client) => {
     if(client.readyState === WebSocket.OPEN){
