@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-  <div>
+  <!-- <div>
     <h1> Видеозвонок</h1>
     <label>Ваш ID: <input id="yourId" value="client1" /></label><br />
     <label>ID партнера: <input id="partnerId" value="client2" /></label><br />
@@ -19,6 +19,17 @@
   <video id="localVideo" autoplay muted playsinline></video>
   <video id="remoteVideo" autoplay playsinline></video>
 
-  <script type="module" src="client.js"></script>
+  <script type="module" src="client.js"></script> -->
+  <div id="id1"></div>
+<script>
+let ws = new WebSocket('wss://truruky.ru/ws');
+  ws.onmessage = (message) => {
+    const message = JSON.parse(message);
+    log('Signaling message received:', d);
+    document.getElementById('id1').innerHTML =`${message}`;
+  }
+
+</script>
+
 </body>
 </html>
