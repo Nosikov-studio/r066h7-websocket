@@ -45,7 +45,7 @@ ws.onmessage = (e) => {
   // отправляем сообщение формы по нажатию кнопки
     document.getElementById('sendButton').addEventListener('click', ()=> {
     const messageInput =document.getElementById('messageInput').value;
-    ws.send(JSON.stringify({ event: 'greeting', message: messageInput}));
+    ws.send(JSON.stringify({ e: 'greeting', m: messageInput}));
     });
 
 </script>
