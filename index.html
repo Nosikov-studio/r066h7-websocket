@@ -24,9 +24,9 @@
 <script>
 let ws = new WebSocket('wss://truruky.ru/ws');
   ws.onmessage = (e) => {
-    const d = JSON.parse(e.data);
+    const d = JSON.parse(e.data); // Здесь d — это объект {type: ..., data: ...}
     
-    document.getElementById('id1').innerHTML =`${d.a}`;
+    document.getElementById('id1').innerHTML =`${d.data}`; 
   }
 
 </script>
