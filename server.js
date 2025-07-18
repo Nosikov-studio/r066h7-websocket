@@ -18,17 +18,17 @@ wss.on('connection', (ws) => {
 
 
   //********************************************************
-  // Обработка входящих сообщений
-    ws.on('message', (message) => {
-// Парсим сообщение
-        const data =JSON.parse(message);
-        
-// Отправляем сообщение всем клиентам
-        wss.clients.forEach(client => {
-            if (client.readyState === WebSocket.OPEN){ // 
-                client.send(JSON.stringify(data));
-            }
-        });  
+//   // Обработка входящих сообщений
+//     ws.on('message', (message) => {
+// // Парсим сообщение
+//         const data =JSON.parse(message);
+
+// // Отправляем сообщение всем клиентам
+//         wss.clients.forEach(client => {
+//             if (client.readyState === WebSocket.OPEN){ // 
+//                 client.send(JSON.stringify(data));
+//             }
+//         });  
   
   //**********************************************************/
   const d={a:'blabla', b:'kuku', c:1974, d:true}
