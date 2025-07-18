@@ -34,7 +34,7 @@ let ws = new WebSocket('wss://truruky.ru/ws');
 
 ws.onopen = () => {
   console.log('Connected to the WebSocket server');
-  ws.send(JSON.stringify({e: 'greeting', m: 'Hello Server!'}));
+  ws.send(JSON.stringify({e: 'greeting', m: 'Hello Server!', name: name}));
 };
 
 
